@@ -4,6 +4,7 @@ script: true
 before_install:
  - openssl aes-256-cbc -k "$super_secret_password" -in se23456.pem.enc -out
 se23456.pem -d
+ - sudo chmod 400 se23456.pem
 
 after_success:
  - ls -l
